@@ -7,9 +7,15 @@ templateUrl: './cart.component.html',
 styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+items;
 
 constructor(
   private cartService: CartService
 ) { }
+
+// tslint:disable-next-line: use-lifecycle-interface
+ngOnInit() {
+  this.items = this.cartService.getItems();
+}
 
 }
